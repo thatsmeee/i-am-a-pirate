@@ -17,25 +17,6 @@
             videoElement.src = getVideoSource();
             videoElement.parentElement.load();
         });
-
-        function downloadFile() {
-            var url = 'https://polonium.stream.voidboost.cc/6330067d0d9fdf9270213f60ecb67937:2024052316:NlI5RTdLd1ZSTTd4R2owZjlLUi9McGNXWERjUGhyRXl5Q2dXbTVtdGN0MmVXbXhGZjBiRUtXZk5VajJiZWxQU1VjNmZZTkdrSi9WbW5MQ1M4dmFhdWorS1MvTUxRTHV0L21hdm8vWHRMeEE9/1/4/3/7/6/1/qub3i.mp4';
-            var filename = 'The_Banker';
-            
-            fetch(url)
-            .then(response => response.blob())
-            .then(blob => {
-                var a = document.createElement('a');
-                var url = window.URL.createObjectURL(blob);
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-            })
-            .catch(error => console.error('Ошибка загрузки файла:', error));
-        }
     </script>
 </head>
 <body>
@@ -48,7 +29,7 @@
             <div class="info">
                 <div class="rating">
                     <b>Рейтинг</b>
-                    <a href="/help/aHR0cHMlM0ElMkYlMkZ3d3cuaW1kYi5jb20lMkZ0aXRsZSUyRnR0NjI4NTk0NCUyRg==/" target="_blank" rel="nofollow">IMDb</a>: 
+                    <b>IMDb</b>: 
                     <b>7.3</b> <i>(35 908)</i>
                 </div>
                 <div class="lists">
@@ -72,7 +53,6 @@
             </div>                                
         </div>
     </div>
-    <button onclick="downloadFile()" style="width: 100%">Скачать фильм</button>
     <div id="lightbox" class="hidden">
         <span id="close">×</span>
         <div id="lightbox-content"></div>
