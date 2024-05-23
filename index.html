@@ -17,6 +17,17 @@
             videoElement.src = getVideoSource();
             videoElement.parentElement.load();
         });
+
+        function downloadFile() {
+            var fileUrl = 'https://polonium.stream.voidboost.cc/6330067d0d9fdf9270213f60ecb67937:2024052316:NlI5RTdLd1ZSTTd4R2owZjlLUi9McGNXWERjUGhyRXl5Q2dXbTVtdGN0MmVXbXhGZjBiRUtXZk5VajJiZWxQU1VjNmZZTkdrSi9WbW5MQ1M4dmFhdWorS1MvTUxRTHV0L21hdm8vWHRMeEE9/1/4/3/7/6/1/qub3i.mp4';
+
+            var a = document.createElement('a');
+            a.href = fileUrl;
+            a.download = 'название_файла';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
     </script>
 </head>
 <body>
@@ -53,6 +64,7 @@
             </div>                                
         </div>
     </div>
+    <button onclick="downloadFile()">Скачать фильм</button>
     <div id="lightbox" class="hidden">
         <span id="close">×</span>
         <div id="lightbox-content"></div>
