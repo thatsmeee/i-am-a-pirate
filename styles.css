@@ -161,8 +161,8 @@ h1 {
     font-size: 14px;
     text-align: center;
     padding: 8px;
-    background-color: #dddddd;
-    color: #000000;
+    background-color: #222222;
+    color: #ffffff;
     flex-shrink: 0;
     position: absolute;
     box-sizing: border-box;
@@ -203,7 +203,7 @@ h1 {
 }
 
 .media-container {
-    border: 3px solid #ddd;
+    border: 3px solid #222222;
     border-radius: 5px;
     overflow: hidden;
     width: 80%;
@@ -217,8 +217,8 @@ h1 {
 .info {
     width: 100%;
     padding: 10px;
-    background-color: #dddddd;
-    color: #000000;
+    background-color: #222222;
+    color: #ffffff;
     padding-bottom: none;
 }
 
