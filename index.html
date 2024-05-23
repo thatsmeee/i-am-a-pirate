@@ -19,14 +19,22 @@
         });
 
         function downloadFile() {
-            var fileUrl = 'https://polonium.stream.voidboost.cc/6330067d0d9fdf9270213f60ecb67937:2024052316:NlI5RTdLd1ZSTTd4R2owZjlLUi9McGNXWERjUGhyRXl5Q2dXbTVtdGN0MmVXbXhGZjBiRUtXZk5VajJiZWxQU1VjNmZZTkdrSi9WbW5MQ1M4dmFhdWorS1MvTUxRTHV0L21hdm8vWHRMeEE9/1/4/3/7/6/1/qub3i.mp4';
-
-            var a = document.createElement('a');
-            a.href = fileUrl;
-            a.download = 'название_файла';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            var url = 'https://polonium.stream.voidboost.cc/6330067d0d9fdf9270213f60ecb67937:2024052316:NlI5RTdLd1ZSTTd4R2owZjlLUi9McGNXWERjUGhyRXl5Q2dXbTVtdGN0MmVXbXhGZjBiRUtXZk5VajJiZWxQU1VjNmZZTkdrSi9WbW5MQ1M4dmFhdWorS1MvTUxRTHV0L21hdm8vWHRMeEE9/1/4/3/7/6/1/qub3i.mp4';
+            var filename = 'The_Banker';
+            
+            fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(blob);
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            })
+            .catch(error => console.error('Ошибка загрузки файла:', error));
         }
     </script>
 </head>
@@ -64,7 +72,7 @@
             </div>                                
         </div>
     </div>
-    <button onclick="downloadFile()">Скачать фильм</button>
+    <button onclick="downloadFile()" style="width: 100%">Скачать фильм</button>
     <div id="lightbox" class="hidden">
         <span id="close">×</span>
         <div id="lightbox-content"></div>
